@@ -29,6 +29,7 @@ class BattleShips < Sinatra::Base
   post '/' do
     @user = params[:user]
     player = Player.new
+    session[:me] = player.object_id
     puts player.inspect
     player.name = @user
     puts player.inspect
